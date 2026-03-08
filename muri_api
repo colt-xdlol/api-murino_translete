@@ -1,0 +1,25 @@
+dictionary = {
+    "я": "ч",
+    "друг": "друн",
+    "течток": "течтокерность",
+    "школа": "школьность",
+    "ты": "тобость",
+    "мы": "намость"
+}
+
+def mur_translate(text):
+    words = text.split()
+    result = []
+
+    for w in words:
+        lw = w.lower()
+
+        if lw in dictionary:
+            result.append(dictionary[lw])
+        else:
+            result.append(w + "ость")
+
+    return " ".join(result)
+
+
+print(mur_translate("я иду в школу"))
